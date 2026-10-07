@@ -2,7 +2,7 @@
 
 ## Shape of the schema
 
-[prisma/schema.prisma](../../../prisma/schema.prisma) — 1909 lines, ~80 models. Three generations visible in the naming:
+[prisma/schema.prisma](../../../prisma/schema.prisma) — 1909 lines, 81 models and 23 enums. Three generations visible in the naming:
 
 1. **Mongo-era models**: `crm_Accounts`, `crm_Contacts`, snake_case fields, stray `v` version field (stamped `v: 0` at [update-account.ts:45](../../../actions/crm/accounts/update-account.ts#L45)), duplicated ownership spellings (`createdBy`/`created_by`/`created_by_user`).
 2. **Explicit junction tables**: `DocumentsToAccounts`, `ContactsToOpportunities`, `AccountWatchers`, `TargetsToTargetLists` (schema L1098-L1305) — many-to-many made first-class so rows can carry metadata and scopes can traverse them.

@@ -1,6 +1,8 @@
 # Verification Log
 
-Running record of what was inspected while writing this curriculum. Date: **2026-07-11**. Environment: Windows 11, repo at `masternext/nextcrm-app`, working tree with no git commits (fresh clone/copy — `git log` reports no commits on `main`).
+Running record of what was inspected while writing this curriculum. Date: **2026-07-11**. Environment: Windows 11, app directory `nextcrm-app/`, working tree with no git commits at the time (fresh copy — `git log` reported no commits on `main`).
+
+> **Status note (2026-10-06, frozen record).** The log below is the 2026-07-11 authoring pass, kept as written. A static re-check on 2026-10-06 (no installs, builds or tests) resolved every relative link under `fabledocs/upskill/` and confirmed line anchors fall inside their files; the ten "key findings" below were re-read at their cited lines and still match the code (`updateAccount`/`deleteAccount` still check only `getSession()`, the Resend HMAC still uses `===`, merge tags still substitute unescaped, first-user-admin still uses `count === 1`). Two counts were corrected: the schema has 81 models + 23 enums (not "~80 models/enums"), and the tree now tracks 1,467 files (including this curriculum). The repository now has a single snapshot commit, so there is still no upstream history to diff anchors against.
 
 ## Commands run
 
@@ -9,7 +11,7 @@ Running record of what was inspected while writing this curriculum. Date: **2026
 | `rg --files \| wc -l` | 1404 files |
 | `git log --oneline` | "branch 'main' does not have any commits yet" — no git history to consult |
 | Directory listings (`ls`) of app/, actions/, lib/, inngest/, prisma/, tests/, docs/ | recorded in module docs |
-| `grep -n "^model\|^enum" prisma/schema.prisma` | ~80 models/enums; schema is 1909 lines |
+| `grep -n "^model\|^enum" prisma/schema.prisma` | 81 `model` + 23 `enum` blocks (recounted 2026-10-06); schema is 1909 lines |
 
 **No install/build/test commands were executed.** `pnpm install`, `pnpm dev`, `pnpm test`, `pnpm test:e2e` are all marked __inferred__ throughout, read from [package.json](../../../package.json#L9-L21), [jest.config.ts](../../../jest.config.ts), [playwright.config.ts](../../../playwright.config.ts), [docker-compose.yml](../../../docker-compose.yml).
 

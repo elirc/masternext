@@ -19,7 +19,7 @@
 | 11 | [app/[locale]/(routes)/crm/accounts/table-components/data-table.tsx](<../../../app/%5Blocale%5D/(routes)/crm/accounts/table-components/data-table.tsx>) | TanStack Table wiring — repeated for every entity | — |
 | 12 | [actions/crm/accounts/update-account.ts](../../../actions/crm/accounts/update-account.ts#L34-L67) | what's *missing* (scope check, Zod), audit diff, Inngest event, revalidatePath | field list |
 | 13 | [lib/audit-log.ts](../../../lib/audit-log.ts#L36-L82) | JSON.stringify diffing; write failures swallowed on purpose | — |
-| 14 | [prisma/schema.prisma](../../../prisma/schema.prisma#L12-L71) | `crm_Accounts` model: soft-delete cols, `assigned_to`/`createdBy` ownership fields, watcher junction | all 80 models |
+| 14 | [prisma/schema.prisma](../../../prisma/schema.prisma#L12-L71) | `crm_Accounts` model: soft-delete cols, `assigned_to`/`createdBy` ownership fields, watcher junction | all 81 models (+23 enums) |
 
 ## Mid path (15–22): follow the money and the queue
 
